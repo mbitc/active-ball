@@ -94,7 +94,7 @@ const player = {
   x: 0,
   y: 0,
   radius: 15,
-  color: 'green',
+  color: 'orange',
 };
 
 c.addEventListener('mousemove', function (event) {
