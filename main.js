@@ -1,6 +1,13 @@
 const c = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+function randomRgbColor() {
+  let r = getRandom(0, 255);
+  let g = getRandom(0, 255);
+  let b = getRandom(0, 255);
+  return [r, g, b];
+}
+
 function drawCircle(circle) {
   ctx.beginPath();
   ctx.ellipse(
@@ -70,7 +77,7 @@ for (let i = 0; i < 20; i++) {
     x: getRandom(50, 900),
     y: getRandom(50, 400),
     radius: 15,
-    color: 'blue',
+    color: `rgb(${randomRgbColor()})`,
     dangerRadius: 150,
     hunting: false,
     speed: 2,
@@ -131,7 +138,7 @@ function render() {
 
     if (checkCirclesCollision(enemy.target, enemy) === true) {
       if (enemy.hunting === true) {
-        console.log('Попался');
+        console.log('Catch');
       } else {
         enemy.target = {
           x: getRandom(50, 900),
